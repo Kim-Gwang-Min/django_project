@@ -13,9 +13,11 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent   #이 프로젝트의 경로가 base_dir
+BASE_DIR = Path(__file__).resolve().parent.parent   #이 프로젝트의 경로가 base_dir , BASE_DIRrk
+#__file__은 settings.py를 말하고, settings.py의 parent(부모)는 djangoProjet폴더이고, 그 폴더의 parent(부모)는 최상위 폴더 djangoProject이다.
+# 즉 최상위 폴더를 BASE_DIR이라는 함수에 넣어주었다!
 
-local_env = open(os.path.join(BASE_DIR, '.env'))
+local_env = open(os.path.join(BASE_DIR, '.env')) #os라는 파이썬 모듈에서 path라는 경로 함수로 BASE_DIR의 .env 파일을 타게팅하여 join()한다.
 
 env_list = dict()
 

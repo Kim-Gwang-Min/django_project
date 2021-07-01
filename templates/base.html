@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' %}
+
+<body>
+
+    {% include 'header.html' %}
+
+    {% block content %}  #content라는 이름을 가진 block을 만들겠다!
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

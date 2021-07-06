@@ -1,8 +1,31 @@
-{% extends 'base.html' %}  #base.htmel을 이 폴더에서 사용하겠다 확장하겠다!
+{% extends 'base.html' %}  {# base.htmel을 이 폴더에서 사용하겠다 확장하겠다! #}
 
 {% block content %}
+
+    <style>
+        .testing {
+            background-color: yellow;
+            height: 48px;
+            width: 48px;
+            margin: 1.5rem;
+            border-radius: .5rem;
+        }
+    </style>
+
     <div style="height: 20rem; background-color: aqua; border-radius: 1rem; margin: 2rem" >
-        <h1> wooooow!!</h1>
+        <h1> First!!</h1>
+
+{#    <div class="testing" style="display: block">block</div>   {#높이와 너비를 지정해도 공간을 부모의 너비 만큼 차지함#}
+{#    <div class="testing" style="display: inline">inline</div>  {#높이를 지정해도 내용 글씨 만큰만 높이를 가짐#}
+{#    <div class="testing" style="display: inline-block">inline-block</div>  {#높이와 너비 지정한 만큼#}
+{#    <div class="testing" style="display: none">none</div>  {#시각화 되지 않음#}
+{#    <div class="testing">default</div>  {#아무것도 안하면 부모의 너비만큼 공간 차지함#}
+
+    <div class="testing" style="display: inline-block">block</div>  {# 아무것도 영향 안받음 #}
+    <div class="testing" style="display: inline-block; width: 3rem; height: 3rem;">block</div>  {# 최상단 parent의 영향만 받음 #}
+    <div class="testing" style="display: inline-block; width: 3em; height: 3em;">block</div>  {# 모든 parent 영향 받음#}
+    <div class="testing" style="display: inline-block; width: 30%; height: 30%;">block</div>  {# 상자 사이즈 영향 받음#}
+
     </div>
 
 {% endblock %}

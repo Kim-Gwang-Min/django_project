@@ -15,7 +15,16 @@
     <div style="margin: 2rem; text-align: center;" >
         <h1>METHOD</h1>
 
+        <form action="/accounts/hello_world/" method="post">
+            {% csrf_token %}
+            <input class="btn btn-dark rounded-pill px-4" type="submit">
+        </form>
+
+
+
         <h3>{{ text}}</h3>
+
+
 
 {#    <div class="testing" style="display: block">block</div>   {#높이와 너비를 지정해도 공간을 부모의 너비 만큼 차지함#}
 {#    <div class="testing" style="display: inline">inline</div>  {#높이를 지정해도 내용 글씨 만큰만 높이를 가짐#}

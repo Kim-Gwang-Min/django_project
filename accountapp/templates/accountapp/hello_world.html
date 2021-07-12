@@ -13,17 +13,28 @@
 {#    </style>#}
 
     <div style="margin: 2rem; text-align: center;" >
-        <h1>METHOD</h1>
+        <h1 style="font-family: 'Russo One', margin: 2rem">
+            hello world list
+        </h1>
 
         <form action="/accounts/hello_world/" method="post">
             {% csrf_token %}
-            <input type="text" name="hello_world_input">
-            <input class="btn btn-dark rounded-pill px-4" type="submit">
+            <div class="input-group mb-3 w-40 m-auto">
+                <input type="text" class="form-control"
+                       name="hello_world_input">
+                <button class="btn btn-dark" type="submit">
+                    Button
+                </button>
+            </div>
+{#            <input type="text" name="hello_world_input">#}
+{#            <input class="btn btn-dark rounded-pill px-4" type="submit">#}
         </form>
 
-        {% if hello_world_output %}  {# hello_world_output이 있는지 확인 #}
-            <h3>{{ hello_world_output.text }}</h3>
-        {% endif%}
+        {% if hello_world_list %}   {# hello_world_list가 있는지 확인 #}
+            {% for hello_world in hello_world_list %}
+                <h3>{{ hello_world.text }}</h3>
+            {% endfor %}
+        {% endif %}
 
 
 {#    <div class="testing" style="display: block">block</div>   {#높이와 너비를 지정해도 공간을 부모의 너비 만큼 차지함#}

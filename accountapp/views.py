@@ -14,8 +14,14 @@ def hello_world(request):
         new_hello_world.text = temp  #models.py에 temp 넣기
         new_hello_world.save()  #models에 넣었으니 db에 저장
 
+        hello_world_list = HelloWorld.objects.all()  #DB의 모든 데이터를 가져옴
+
+
         return render(request, 'accountapp/hello_world.html',
-                      context={'hello_world_output': new_hello_world})
+                      context={'hello_world_list': hello_world_list})
+
     else:
+        hello_world_list = HelloWorld.objects.all()   #DB의 모든 데이터를 가져옴
+
         return render(request, 'accountapp/hello_world.html',
-                      context={'text': 'GET METHOD!'})
+                      context={'hello_world_list': hello_world_list})

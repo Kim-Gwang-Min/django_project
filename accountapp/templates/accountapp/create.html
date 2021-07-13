@@ -1,0 +1,21 @@
+{% extends 'base.html' %}  {# 만들어둔 base.htmel을 불러온다. extends로~ #}
+
+{% block content %}
+
+    <div class = "text-center">   {# 가운데 정렬 #}
+        <div class="m-5">     {# 마진 #}
+            <h4>Sign Up</h4>
+        </div>
+        <div>
+            <form action="{% url 'accountapp:create' %}" method="post">      {# post로 보내기 #}
+                {% csrf_token %}              {# <- 이거를 작성해야 post 에러가 안뜬다 #}
+                {{ form }}              {#이미 작성해두었기 때문에 form이라는 객체를 단순 출력만 해주면 된다#}
+                <div class="m-5">   {# 마진 #}
+                <input type="submit"
+                       class="btn btn-dark rounded-pill px-5">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

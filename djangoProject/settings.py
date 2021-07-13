@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
+from django.urls import reverse_lazy
+
 BASE_DIR = Path(__file__).resolve().parent.parent   #이 프로젝트의 경로가 base_dir , BASE_DIRrk
 #__file__은 settings.py를 말하고, settings.py의 parent(부모)는 djangoProjet폴더이고, 그 폴더의 parent(부모)는 최상위 폴더 djangoProject이다.
 # 즉 최상위 폴더를 BASE_DIR이라는 함수에 넣어주었다!
@@ -146,3 +149,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+#로그인에 성공하면 hello_world로 연결#
+
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
+#로그아웃에 성공하면 hello_world로 연결#

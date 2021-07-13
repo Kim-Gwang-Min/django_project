@@ -30,8 +30,8 @@ def hello_world(request):
 
 
 
-class AccountCreateView(CreateView):   #AccountCreateView라는 이름의 class를 만들 건데, CreatView를 상송받아라!
+class AccountCreateView(CreateView):    #AccountCreateView라는 이름의 class를 만들 건데, CreatView를 상속받아라!
     model = User
-    form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:hello_world')  #reverse와 무슨 차이냐면, class 안에서는 reverse_lazy를 해야함!
-    template_name = 'accountapp/create.html'  #create.html 라우터를 만듬
+    form_class = UserCreationForm      #폼은 클래스로 만들건데 UserCreationForm이라는 class를 겨자다 쓸게!
+    success_url = reverse_lazy('accountapp:hello_world')     #reverse와 무슨 차이냐면, class 안에서는 reverse_lazy를 해야함!
+    template_name = 'accountapp/create.html'      #create.html 라우터를 만듬

@@ -11,7 +11,7 @@
 
         <spam>
             <a href="{% url 'accountapp:login' %}">
-                Login
+                LogIn
             </a>
         </spam>
         <spam>
@@ -21,10 +21,14 @@
         </spam>
 
         {% else %}
-
+        <spam>
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                MyPage
+            </a>
+        </spam>
         <spam>
             <a href="{% url 'accountapp:logout' %}">
-                Logout
+                LogOut
             </a>
         </spam>
 
@@ -33,3 +37,11 @@
     </div>
 
 </div>
+
+
+
+
+
+
+
+A

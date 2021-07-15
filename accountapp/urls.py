@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
-from accountapp.views import hello_world, AccountCreateView
+from accountapp.views import hello_world, AccountCreateView, AccountDetailView
 
 app_name = 'accountapp'
 
@@ -13,6 +13,21 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     #장고가 만들어둔 logoutview를 가져오자!#
 
-    path('create/', AccountCreateView.as_view(), name='create')
+    path('create/', AccountCreateView.as_view(), name='create'),
     # 회원가입 페이지 연결 #
+
+    path('detail/<int:pk>', AccountDetailView.as_view(), name='detail')
+    # 계정 상세페이지 연결 #
 ]
+
+
+
+
+
+
+
+
+
+
+
+

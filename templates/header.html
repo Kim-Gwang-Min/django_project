@@ -6,7 +6,10 @@
     <div class="header_button">
         <spam>nav1</spam>
         <spam>nav2</spam>
-        <spam>nav3
+
+        {% if not user.is_authenticated %}
+
+        <spam>
             <a href="{% url 'accountapp:login' %}">
                 Login
             </a>
@@ -16,6 +19,17 @@
                 SignUp
             </a>
         </spam>
+
+        {% else %}
+
+        <spam>
+            <a href="{% url 'accountapp:logout' %}">
+                Logout
+            </a>
+        </spam>
+
+        {% endif %}
+
     </div>
 
 </div>

@@ -1,17 +1,18 @@
 {# login 페이지는 create 페이지를 그대로 복사해와서 내용만 바꾸면 된다!#}
 
 {% extends 'base.html' %}  {# 만들어둔 base.htmel을 불러온다. extends로~ #}
+{% load bootstrap4 %}
 
 {% block content %}
 
-    <div class = "text-center">
+    <div class = "text-center mw-500 m-auto">
         <div class="m-5">
             <h4>Login</h4>    {# sign up을 Login으로 변경 #}
         </div>
         <div>
             <form action="{% url 'accountapp:login' %}" method="post">      {# create를 login으로 변경 #}
                 {% csrf_token %}
-                {{ form }}
+                {% bootstrap_form form %}
                 <div class="m-5">
                 <input type="submit"
                        class="btn btn-dark rounded-pill px-5">

@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from accountapp.models import HelloWorld
 
@@ -41,6 +41,22 @@ class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
+
+class AccountUpdateView(UpdateView):   #장고의 updateview 상속받기
+    model = User
+    form_class = UserCreationForm
+    context_object_name = 'target_user'
+    success_url = reverse_lazy('accountapp:hello_world')  #본인이 본인이 페이지를 수정하고 나서 detail로 가는게 자연스러움~ 그런데 지금은 pk가 필요해서 나중에 수정!
+    template_name = 'accountapp/update.html'
+
+
+class AccountDeleteView(DeleteView):
+    model = User
+    context_object_name = 'target_user'  #삭제하고자하는 계정(객체)에 접근
+    success_url = reverse_lazy('accountapp:hello_world')  #탈퇴가 완료되면 나오는 페이지
+    template_name = 'accountapp/delete.html'
+
 
 
 

@@ -9,39 +9,31 @@
 
         {% if not user.is_authenticated %}
 
-        <spam>
+        <span>
             <a href="{% url 'accountapp:login' %}">
                 LogIn
             </a>
-        </spam>
-        <spam>
+        </span>
+        <span>
             <a href="{% url 'accountapp:create' %}">
                 SignUp
             </a>
-        </spam>
+        </span>
 
         {% else %}
-        <spam>
+        <span>
             <a href="{% url 'accountapp:detail' pk=user.pk %}">
                 MyPage
             </a>
-        </spam>
-        <spam>
+        </span>
+        <span>
             <a href="{% url 'accountapp:logout' %}">
                 LogOut
             </a>
-        </spam>
+        </span>
 
         {% endif %}
 
     </div>
 
 </div>
-
-
-
-
-
-
-
-A

@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),    #admin은 관리자페이지!
-    path('accounts/', include('accountapp.urls'))    #빨간줄이 뜨면 Alt+enter을 눌러 도움을 받을 수 있음!
+    path('admin/', admin.site.urls),    #admin은 관리자 페이지 - 장고에서 기본 제공해주는 것, 커스터마이징도 가능!
+    path('accounts/', include('accountapp.urls')),    #빨간줄이 뜨면 Alt+enter을 눌러 도움을 받을 수 있음!
+    path('profiles/', include('profileapp.urls')),
+
 ]

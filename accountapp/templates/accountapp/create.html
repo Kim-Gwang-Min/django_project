@@ -1,16 +1,15 @@
-{% extends 'base.html' %}  {# 만들어둔 base.htmel을 불러온다. extends로~ #}
+{% extends 'base.html' %}
 {% load bootstrap4 %}
+{% block content %}  {# 만들어둔 base.htmel을 불러온다. extends로~ #}
 
-{% block content %}
-
-    <div class = "text-center mw-500 m-auto">   {# mw-500 css를 적용하고 좌우마진을 자동으로 준다 #}
-        <div class="m-5">     {# 마진 #}
+    <div class = "text-center mw-500 m-auto">  {# mw-500 css를 적용하고 좌우마진을 자동으로 준다 #}
+        <div class="m-5">  {# 마진 #}
             <h4>Sign Up</h4>
         </div>
         <div>
-            <form action="{% url 'accountapp:create' %}" method="post">      {# post로 보내기 #}
-                {% csrf_token %}              {# <- 이거를 작성해야 post 에러가 안뜬다 #}
-                {% bootstrap_form form %}             {#이미 작성해두었기 때문에 form이라는 객체를 단순 출력만 해주면 된다#} {# -> bootstrap_form으로 변경 #}
+            <form action="{% url 'accountapp:create' %}" method="post">   {# post로 보내기 #}
+                {% csrf_token %}    {# <- 이거를 작성해야 post 에러가 안뜬다 #}
+                {% bootstrap_form form %}   {#이미 작성해두었기 때문에 form이라는 객체를 단순 출력만 해주면 된다#} {# -> bootstrap_form으로 변경 #}
                 <div class="m-5">   {# 마진 #}
                 <input type="submit"
                        class="btn btn-dark rounded-pill px-5">

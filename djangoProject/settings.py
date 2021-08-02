@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'accountapp',
     'profileapp',
+    'articleapp',
 ]
 
 MIDDLEWARE = [
@@ -165,3 +166,14 @@ LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 #로그아웃에 성공하면 hello_world로 연결#
+
+
+
+
+
+
+
+
+
+
+

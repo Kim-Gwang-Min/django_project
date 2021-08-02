@@ -52,8 +52,11 @@ class AccountUpdateView(UpdateView):   #장고의 updateview 상속받기
     model = User
     form_class = AccountCreationForm
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')  #본인이 본인이 페이지를 수정하고 나서 detail로 가는게 자연스러움~ 그런데 지금은 pk가 필요해서 나중에 수정!
     template_name = 'accountapp/update.html'
+
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+
 
 
 @method_decorator(has_ownership, 'get')

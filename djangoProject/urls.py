@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
@@ -20,5 +22,26 @@ urlpatterns = [
     path('admin/', admin.site.urls),    #admin은 관리자 페이지 - 장고에서 기본 제공해주는 것, 커스터마이징도 가능!
     path('accounts/', include('accountapp.urls')),    #빨간줄이 뜨면 Alt+enter을 눌러 도움을 받을 수 있음!
     path('profiles/', include('profileapp.urls')),
+    path('articles/', include('articleapp.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  #이렇게 해줘야 프로필 이미지가 나온다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

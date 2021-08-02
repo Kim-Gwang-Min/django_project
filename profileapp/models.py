@@ -13,3 +13,8 @@ class Profile(models.Model):  #장고가 기본제공하는 model상속받기
     message = models.CharField(max_length=200, null=True ) #대화명, 상태메세지, null값을 true로 해주면 메세지가 없어도 괜찮아진다!
 
 
+
+
+
+
+

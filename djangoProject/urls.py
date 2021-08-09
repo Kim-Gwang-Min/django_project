@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('accountapp.urls')),    #빨간줄이 뜨면 Alt+enter을 눌러 도움을 받을 수 있음!
     path('profiles/', include('profileapp.urls')),
     path('articles/', include('articleapp.urls')),
+    path('comments/', include('commentapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  #이렇게 해줘야 프로필 이미지가 나온다
 

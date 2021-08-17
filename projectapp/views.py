@@ -1,8 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, DetailView
-
+from django.views.generic import CreateView, DetailView, ListView
 
 from projectapp.forms import ProjectCreationForm
 from projectapp.models import Project
@@ -24,7 +23,11 @@ class ProjectDetailView(DetailView):
     template_name = 'projectapp/detail.html'
 
 
-
+class ProjectListView(ListView):
+    model = Project
+    context_object_name = 'project_list'
+    template_name = 'projectapp/list.html'
+    paginate_by = 20  #한 페이지에 몇개의 프로젝트까지 보일 것인가
 
 
 

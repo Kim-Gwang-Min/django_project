@@ -4,8 +4,16 @@
         <h1>Artificial Intelligence Friend</h1>
     </div>
     <div class="header_button">
-        <spam>nav1</spam>
-        <spam>nav2</spam>
+        <span>
+            <a href="{% url 'articleapp:list' %}">
+                Articles
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'projectapp:list' %}">
+                Projects
+            </a>
+        </span>
 
         {% if not user.is_authenticated %}
 

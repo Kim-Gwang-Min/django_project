@@ -15,9 +15,23 @@ class Article(models.Model):  #게시글에 필요한 것들을 작성해보자~
     title = models.CharField(max_length=200, null=True)
     image = models.ImageField(upload_to='article/', null=True)
     content = models.TextField(null=True)
+
     created_at = models.DateField(auto_now_add=True, null=True)
+
+    like = models.IntegerField(default=0)
+
 #프로필앱에서는 onetoone으로 1:1 매칭해야하지만,
 #게시글은 한 유저가 여러가지 게시글을 작성할 수 있으므로,
 #ForeignKey로 연결만 해주면 된다~
 
 # 모델이 변화하면 migration, migrate해야한다!
+
+
+
+
+
+
+
+
+
+

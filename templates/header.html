@@ -1,23 +1,24 @@
 <div style="text-align: center">
 
     <div class="header_logo" >
-        <h1>Artificial Intelligence Friend</h1>
+        <h1>Clinical Nutrition Times</h1>
+        <h5>- 임상영양타임스 -</h5>
     </div>
     <div class="header_button">
         <span>
             <a href="{% url 'articleapp:list' %}">
-                Articles
+                [전체 글]
             </a>
         </span>
         <span>
             <a href="{% url 'projectapp:list' %}">
-                Projects
+                 [게시판]
             </a>
         </span>
         {% if user.is_authenticated %}
         <span>
             <a href="{% url 'subscribeapp:list' %}">
-                Subscription
+                [Subscription]
             </a>
         </span>
         {% endif %}
@@ -26,24 +27,24 @@
 
         <span>
             <a href="{% url 'accountapp:login' %}">
-                LogIn
+                [로그인]
             </a>
         </span>
         <span>
             <a href="{% url 'accountapp:create' %}">
-                SignUp
+                [회원가입]
             </a>
         </span>
 
         {% else %}
         <span>
             <a href="{% url 'accountapp:detail' pk=user.pk %}">
-                MyPage
+                [MyPage]
             </a>
         </span>
         <span>
             <a href="{% url 'accountapp:logout' %}">
-                LogOut
+                [로그아웃]
             </a>
         </span>
 
